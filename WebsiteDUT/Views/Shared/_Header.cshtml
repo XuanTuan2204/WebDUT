@@ -1,0 +1,50 @@
+﻿@using WebsiteDUT.Model
+@using WebsiteDUT.Common
+@{
+    var menuTop = (List<ModelEF.EF.LoaiDonVi>)ViewBag.MenuTop;
+    var menuItemTop = (List<ModelEF.EF.DonVi>)ViewBag.MenuItemTop;
+}
+
+<div class="containerr" style="position:relative; z-index:10">
+    <nav class="navbar navbar-expand-lg navbar-light bg-lightt">
+        <div class="container-fluid">
+            <button class="navbar-toggler" style="width: 50px; height: 30px;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="width: 20px; height: 20px;"></span>
+            </button>
+            <div class="collapse navbar-collapse" style="float: left; margin-left: auto;" id="navbarSupportedContent">
+                <div class="navbar_menu" style="margin-left: auto;">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-cap2">
+                        @foreach (var item in menuTop)
+                        {
+                            var child = menuItemTop.Where(x => x.MaLoaiDonVi == item.MaloaiDonVi);
+                            <li class="nav-item">
+                                <a class="nav-link active" style="color: #fff; font-size: 15px; font-family: tienne;" aria-current="page" href="#">@item.TenLoaiDonVi</a>
+                                <ul class="menu-sub" style="padding-left: 1rem ;">
+                                    @foreach (var childItem in child)
+                                    {
+                                        <li><a class="navmenu-link" href="@childItem.DuongDan">@childItem.TenDonVi</a> </li>
+                                        <div class="dropdown-divider"></div>
+                                    }
+                                </ul>
+                            </li>
+                        }
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" style="color: #fff; font-size: 15px; font-family: tienne;">EN</a>
+                        </li>
+                    </ul>
+                </div>
+                <div style="float: left;">
+                    <form action="" class="search-box">
+                        <input type="text" name="" value="" placeholder="Tìm Kiếm">
+                        <button class="search-button" type="button" name="Tìm Kiếm">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</div>
+

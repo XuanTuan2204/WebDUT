@@ -1,0 +1,119 @@
+﻿@using WebsiteDUT.Helper;
+@{
+    var lienKetNhanh = (List<ModelEF.EF.LienKet>)ViewBag.LienKetNhanh;
+    var hoatDongLienKet = (List<ModelEF.EF.ChuyenMuc>)ViewBag.HoatDongLienKet;
+}
+<div class="work_and_link">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="work">
+                <div class="container-fluid title_news">
+                    <div class="row">
+                        <div class="col-sm-11 title_rigt">
+                            <img src="~/Assets/Client/img/hoatdong.png" width="35px" height="35px" style="float: left; margin-right: 20px;">
+                            <h5 style="color: #0A67AF;">HOẠT ĐỘNG</h5>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .owl-img .owl-item img{
+                        width: 96%;
+                        margin: auto;
+                    }
+                </style>
+                <div class="owl-carousel owl-theme owl-img without-loop">
+                    @foreach (var item in hoatDongLienKet)
+                     {
+                        <div class="item">
+                            <div class="view">
+                                <a href="@item.DuongDan">@Html.Image(item.AnhDaiDien, "image")</a>
+                                <div class="mask rgba-black-light"></div>
+                            </div>
+                            <div class="carousel-caption">
+                                <h3 class="h3-responsive">@item.TieuDe</h3>
+                                <p>@item.NoiDung</p>
+                            </div>
+                        </div>
+                     }
+                </div>
+            </div>
+            <div class="khoa_vien">
+                <div class="container-fluid title_news">
+                    <div class="row">
+                        <div class="col-sm-11 title_rigt" style="float: left;">
+                            <img src="~/Assets/Client/img/lienket.png" width="35px" height="35px" style="float: left; margin-right: 20px;">
+                            <h5 style="color: #0A67AF;">Liên kết Khoa - Viện</h5>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-carousel owl-theme without-loop1">
+
+                    <div class="col  khoa-image">
+                        <a href="http://dut.udn.vn/KhoaCNTT"><img style="height: 150px;" src="~/Assets/Client/img/k-cntt.jpg"></a>
+                        <p>Khoa CNTT</p>
+                    </div>
+
+                    <div class="col  khoa-image">
+                        <a href="http://dien.dut.udn.vn/"><img style="height: 150px;" src="~/Assets/Client/img/k-dien.jpg"></a>
+                        <p>Khoa điện</p>
+                    </div>
+
+                    <div class="col  khoa-image">
+                        <a href="http://cauduongbkdn.dut.udn.vn/"><img style="height: 150px;" src="~/Assets/Client/img/cauduong.jpg"></a>
+                        <p>Khoa Cầu Đường</p>
+                    </div>
+
+                    <div class="col  khoa-image">
+                        <a href="http://dut.udn.vn/KhoaCKGT"><img style="height: 150px;" src="~/Assets/Client/img/giaothong.jpg"></a>
+                        <p>Khoa Giao thông</p>
+                    </div>
+
+                    <div class="col  khoa-image">
+                        <a href="http://moitruong.dut.udn.vn/"><img style="height: 150px;" src="~/Assets/Client/img/moitruong.png"></a>
+                        <p>Khoa Môi trường</p>
+                    </div>
+
+                    <div class="col  khoa-image">
+                        <a href="http://cokhi.dut.udn.vn/"><img style="height: 150px;" src="~/Assets/Client/img/cokhi.jpg"></a>
+                        <p>Khoa Cơ khí</p>
+                    </div>
+
+                    <div class="col  khoa-image">
+                        <a href="http://dut.udn.vn/KhoaCNTT"><img style="height: 150px;" src="~/Assets/Client/img/dien-lanh.jpg"></a>
+                        <p>Khoa Điện lạnh</p>
+                    </div>
+
+                    <div class="col  khoa-image">
+                       <a href="http://dut.udn.vn/KhoaCNTT"><img style="height: 150px;" src="~/Assets/Client/img/khcn.jpg"></a>
+                        <p>Khoa học công nghệ</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="link">
+                <div class="link-link">
+                    <div class="container-fluid title_news">
+                        <div class="row">
+                            <div class="col-sm-10 title_rigt">
+                                <img src="~/Assets/Client/img/lienket.png" width="35px" height="35px" style="float: left; margin-right: 20px;">
+                                <h5 style="color: #0A67AF;">LIÊN KẾT NHANH</h5>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="links">
+                        @foreach (var item in lienKetNhanh)
+                        {
+                            <a href="@item.Duongdan" title="@item.TieuDe">@Html.Image(item.AnhDaiDien, "image")</a>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+namespace ModelEF.EF
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("LienKet")]
+    public partial class LienKet
+    {
+        [Key]
+        [StringLength(10)]
+        public string MaLienKet { get; set; }
+
+        public byte[] AnhDaiDien { get; set; }
+
+        [StringLength(200)]
+        public string TieuDe { get; set; }
+
+        public string Duongdan { get; set; }
+
+        public bool TrangThai { get; set; }
+    }
+}

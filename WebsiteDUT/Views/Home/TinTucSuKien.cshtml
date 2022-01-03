@@ -1,0 +1,31 @@
+﻿@using WebsiteDUT.Helper;
+@{
+    var Tintucsukien = (List<ModelEF.EF.ChuyenMuc>)ViewBag.TinTucSuKien;
+}
+<div class="news">
+    <div class="container-fluid title_news">
+        <div class="col title_rigt">
+            <img src="~/Assets/Client/img/news.png" width="35px" height="35px" style="float: left; margin-right: 20px;">
+            <h5 style="color: #0A67AF;">TIN TỨC & SỰ KIỆN</h5>
+            <hr>
+        </div>
+    </div>
+    
+    <div class="carousel owl-carousel">
+        @foreach (var item in Tintucsukien)
+        {
+            <div class="card card-1">
+                <div class="img-box">
+                    <a href="@item.DuongDan">@Html.Image(item.AnhDaiDien, "image")</a>
+                </div>
+                <div class="thumb-content">
+                    <p class="date">@item.NgayCapNhat</p>
+                    <h5>@item.TieuDe</h5>
+                    <p class="thumb-tex">@item.NoiDung</p>
+                    <a href="@item.DuongDan" class="btn btn-primary">More<i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

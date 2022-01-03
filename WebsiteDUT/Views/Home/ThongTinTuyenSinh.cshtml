@@ -1,0 +1,44 @@
+﻿
+@using WebsiteDUT.Helper;
+@{
+    var thongTinTuyenSinh = (List<ModelEF.EF.ChuyenMuc>)ViewBag.ThongTinTuyenSinh;
+}
+
+<div class="info">
+    <div class="container-fluid title_news">
+        <div class="col-sm-11 title_rigt">
+            <img src="~/Assets/Client/img/thongbao.png" width="35px" height="35px" style="float: left; margin-right: 20px;">
+            <h5 style="color: #0A67AF;">THÔNG TIN TUYỂN SINH</h5>
+            <hr>
+        </div>
+    </div>
+   
+    <div class="grid_img_info">
+        <style>
+            .img_ts img{
+                height: 250px;
+            }
+            .info .grid_img_info {
+                margin: 20px 10px 20px 10px;
+            }
+        </style>
+        <div class="row">
+            @foreach (var item in thongTinTuyenSinh)
+            {
+            <div class="col-sm-4">
+                    <div class="img_ts">
+                        <a href="#">@Html.Image(item.AnhDaiDien, "image", new { width = "100%" })</a>
+                    </div>
+
+                <div class="title_ts">
+                    <h6>@item.TieuDe</h6>
+                    <p>@item.NoiDung</p>
+                </div>
+            </div>
+             }
+        </div>
+
+    </div>
+
+</div>
+

@@ -1,0 +1,179 @@
+﻿@using WebsiteDUT.Helper;
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    var tinTuc = (List<ModelEF.EF.ChuyenMuc>)ViewBag.TinTuc;
+}
+
+<div class="content">
+    <!-- phần body 1 -->
+    <div class="container_image1">
+        <div class="row menu_img">
+            <div class="col order-sm-2 img_text">
+                <a href="http://dut.udn.vn/"><img src="~/Assets/Client/img/anh1.png" /></a>
+                <a class="navmenu-link2" href="#">LỊCH CÔNG TÁC</a>
+            </div>
+            <div class="col order-sm-2 img_text">
+                <a href="http://dut.udn.vn/TuyenSinh2021"><img src="~/Assets/Client/img/anh2.png" /></a>
+                <a class="navmenu-link2" href="#">TUYỂN SINH</a>
+            </div>
+            <div class="col order-sm-2 img_text">
+                <a href="http://dut.udn.vn/Phong/CTSV"><img src="~/Assets/Client/img/anh3.png" /></a>
+                <a class="navmenu-link2" href="#">THƯ VIỆN</a>
+            </div>
+            <div class="col order-sm-2 img_text">
+                <a href="http://dut.udn.vn/TrangHoTroSVHV"><img src="~/Assets/Client/img/anh4.png" /></a>
+                <a class="navmenu-link2" href="#">HỔ TRỢ TRỰC TUYẾN</a>
+            </div>
+            <!-- d-sm-none: display sm none -->
+            <div class="w-100 d-sm-none"></div>
+
+            <div class="col order-sm-2 img_text">
+                <a href="http://dut.udn.vn/Trangcuusinhvien"><img src="~/Assets/Client/img/anh5.png" /></a>
+                <a class="navmenu-link2" href="#">CỰU SINH VIÊN</a>
+            </div>
+            <div class="col order-sm-2 img_text">
+                <a href="http://dut.udn.vn/Trangdoanhnghiep"><img src="~/Assets/Client/img/anh6.png" /></a>
+                <a class="navmenu-link2" href="#">CỔNG THÔNG TIN ĐÀO TẠO</a>
+            </div>
+            <div class="col order-sm-2 img_text">
+                <a href="http://dut.udn.vn/Trangdoanhnghiep"><img src="~/Assets/Client/img/anh7.png" /></a>
+                <a class="navmenu-link2" href="#">TUYỂN DỤNG</a>
+            </div>
+            <div class="col order-sm-2  img_text">
+                <a href="http://dut.udn.vn/Trangdoanhnghiep"><img src="~/Assets/Client/img/anh8.png" /></a>
+                <a class="navmenu-link2" href="#">TẠP CHÍ KHCN</a>
+            </div>
+        </div>
+    </div>
+    <!-- phần body 2 - Tin tức và sự kiện-->
+    @{ Html.RenderAction("TinTucSuKien", "Home");}
+    <!-- phần body 3 - thông tin tuyển sinh-->
+    @{ Html.RenderAction("ThongTinTuyenSinh", "Home");}
+    <!-- phần body 4 - các ngànhn đào tạo hot-->
+    <div class="educate1">
+        <style>
+            .educate1 {
+                padding: 30px 20px 30px;
+            }
+        </style>
+        <section class="educate">
+            <div class="Module Module-261">
+                <div class="ModuleContent">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="description">
+                                <h3>các Ngành Đào Tạo (New)</h3>
+                                <p>
+                                    Chương trình đào tạo của trường Đại học Bách Khoa Đà Nẵng được thiết kế dựa trên sự tham vấn của chuyên gia, chú trọng
+                                    thực hành, phù hợp với nhu cầu mà nhà tuyển dụng tìm kiếm ở nguồn nhân lực thế hệ mới.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3 item">
+                            <figure>
+                                <div class="img"><img alt="" src="~/Assets/Client/img/nganh1.png"></div>
+                                <figcaption>
+                                    <h6><img alt="" src="#">Quản trị kinh doanh</h6>
+                                    <ul>
+                                        <li><a href="nganh-dao-tao/nganh-quan-tri-kinh-doanh">Quản trị kinh doanh</a></li>
+                                        <li><a href="nganh-dao-tao/nganh-kinh-doanh-quoc-te">Kinh doanh quốc tế</a></li>
+                                        <li><a href="nganh-dao-tao/digital-marketing">Digital Marketing </a></li>
+                                    </ul>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3 item">
+                            <figure>
+                                <div class="img"><img alt="" src="~/Assets/Client/img/nganh2.png"></div>
+                                <figcaption>
+                                    <h6><img alt="" src="/Data/Sites/1/media/final/icon.png">Công nghệ thông tin</h6>
+                                    <ul>
+                                        <li>
+                                            <a href="nganh-dao-tao/nganh-ky-thuat-phan-mem">Kỹ thuật phần mềm</a>
+                                        </li>
+                                        <li>
+                                            <a href="nganh-dao-tao/nganh-an-toan-thong-tin">An toàn thông tin</a>
+                                        </li>
+                                        <li>
+                                            <a href="nganh-dao-tao/tri-tue-nhan-tao">Trí tuệ nhân tạo</a>
+                                        </li>
+                                    </ul>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3 item">
+                            <figure>
+                                <div class="img"><a href="nganh-dao-tao/nganh-thiet-ke-do-hoa"><img alt="" src="~/Assets/Client/img/nganh3.png"></a></div>
+                                <figcaption>
+                                    <h6><img alt="" src="/Data/Sites/1/media/final/icon.png">Thiết kế đồ hoạ</h6>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3 item">
+                            <figure>
+                                <div class="img"><a href="nganh-dao-tao/nganh-truyen-thong-da-phuong-tien"><img alt="" src="~/Assets/Client/img/nganh4.png"></a></div>
+                                <figcaption>
+                                    <h6>
+                                        <img alt="" src="/Data/Sites/1/media/final/icon.png">Truyền thông <br>
+
+                                    </h6>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3 item">
+                            <figure>
+                                <div class="img"><img alt="alt" src="~/Assets/Client/img/nganh5.png"></div>
+                                <figcaption>
+                                    <h6><img alt="" src="/Data/Sites/1/media/final/icon.png">Du lịch &amp; Khách sạn</h6>
+                                    <ul>
+                                        <li><a href="nganh-dao-tao/nganh-quan-tri-khach-san">Quản trị Khách sạn</a></li>
+                                        <li>
+                                            <a href="nganh-dao-tao/nganh-quan-tri-dich-vu-du-lich-lu-hanh">
+                                                Quản trị Dịch vụ Du lịch &amp; Lữ
+                                                hành
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-3 item">
+                            <figure>
+                                <div class="img"><img alt="alt" src="~/Assets/Client/img/nganh1.png"></div>
+                                <figcaption>
+                                    <h6><img alt="" src="/Data/Sites/1/media/final/icon.png">Ngôn ngữ</h6>
+                                    <ul>
+                                        <li><a href="nganh-dao-tao/nganh-ngon-ngu-anh">Ngôn ngữ Anh</a></li>
+                                        <li><a href="nganh-dao-tao/nganh-ngon-ngu-nhat">Ngôn ngữ Nhật</a></li>
+                                        <li>
+                                            <a href="https://hcmuni.fpt.edu.vn/nganh-dao-tao/nganh-ngon-ngu-han-quoc">Ngôn ngữ Hàn Quốc</a><br>
+                                        </li>
+                                    </ul>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;">&nbsp;</div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <!-- phần body 5 - hoạt đọng - liên kết-->
+    @{ Html.RenderAction("HoatDongLienKet", "Home");}
+    <!-- phần body 6 - Liên kết các đối tác trường-->
+    <div class="partner">
+        <div class="owl-carousel owl-theme with-loop">
+            <div class="item"><img src="~/Assets/Client/img/doitac1.png"></div>
+            <div class="item"><img src="~/Assets/Client/img/doitac2.png"></div>
+            <div class="item"><img src="~/Assets/Client/img/doitac3.png"></div>
+            <div class="item"><img src="~/Assets/Client/img/doitac4.png"></div>
+            <div class="item"><img src="~/Assets/Client/img/doitac2.png"></div>
+            <div class="item"><img src="~/Assets/Client/img/doitac1.png"></div>
+        </div>
+    </div>
+</div>
+

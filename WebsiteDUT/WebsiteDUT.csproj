@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.4.0.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.4.0.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B844E94-FD88-4DB3-8FAF-126EF51A81FD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebsiteDUT</RootNamespace>
+    <AssemblyName>WebsiteDUT</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44301</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>D:\C# Cuối kì\Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChuyenMucsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DonVisController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LienKetsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoaiChuyenMucsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoaiDonVisController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NguoiDungsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QuangCaosController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QuyenNguoiDungsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TagCouldsController.cs" />
+    <Compile Include="Code\SessionHelper.cs" />
+    <Compile Include="Code\UserSession.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Encryptor.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\HtmlExtensions.cs" />
+    <Compile Include="Models\LoginModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Admin\css\animate.css\css\animate.css" />
+    <Content Include="Assets\Admin\css\bootstrap-reset.css" />
+    <Content Include="Assets\Admin\css\bootstrap.min.css" />
+    <Content Include="Assets\Admin\css\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\Admin\css\chartist\chartist.css" />
+    <Content Include="Assets\Admin\css\component.css" />
+    <Content Include="Assets\Admin\css\font-awesome-n.min.css" />
+    <Content Include="Assets\Admin\css\font-awesome.min.css" />
+    <Content Include="Assets\Admin\css\ionicons.css" />
+    <Content Include="Assets\Admin\css\jquery.mCustomScrollbar.css" />
+    <Content Include="Assets\Admin\css\linearicons.css" />
+    <Content Include="Assets\Admin\css\morris.js\css\morris.css" />
+    <Content Include="Assets\Admin\css\simple-line-icons.css" />
+    <Content Include="Assets\Admin\css\style.css" />
+    <Content Include="Assets\Admin\css\style.min.css" />
+    <Content Include="Assets\Admin\icon\fa-brands-400.svg" />
+    <Content Include="Assets\Admin\icon\fa-regular-400.svg" />
+    <Content Include="Assets\Admin\icon\fa-solid-900.svg" />
+    <Content Include="Assets\Admin\icon\feather\css\feather.css" />
+    <Content Include="Assets\Admin\icon\feather\fonts\feather.svg" />
+    <Content Include="Assets\Admin\icon\font-awesome\css\font-awesome.css" />
+    <Content Include="Assets\Admin\icon\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Assets\Admin\icon\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\Admin\icon\fontawesome-webfont.svg" />
+    <Content Include="Assets\Admin\icon\icofont\css\icofont.css" />
+    <Content Include="Assets\Admin\icon\ionicons.svg" />
+    <Content Include="Assets\Admin\icon\Linearicons-Free.svg" />
+    <Content Include="Assets\Admin\icon\Simple-Line-Icons.svg" />
+    <Content Include="Assets\Admin\icon\themify-icons\fonts\themify.svg" />
+    <Content Include="Assets\Admin\icon\themify-icons\themify-icons.css" />
+    <Content Include="Assets\Admin\images\auth\logo-dark.png" />
+    <Content Include="Assets\Admin\images\auth\Logo-small-bottom.png" />
+    <Content Include="Assets\Admin\images\auth\logo.png" />
+    <Content Include="Assets\Admin\images\avatar-1.jpg" />
+    <Content Include="Assets\Admin\images\avatar-2.jpg" />
+    <Content Include="Assets\Admin\images\avatar-3.jpg" />
+    <Content Include="Assets\Admin\images\avatar-4.jpg" />
+    <Content Include="Assets\Admin\images\avatar-5.jpg" />
+    <Content Include="Assets\Admin\images\breadcrumb-bg.jpg" />
+    <Content Include="Assets\Admin\images\browser\chrome.png" />
+    <Content Include="Assets\Admin\images\browser\firefox.png" />
+    <Content Include="Assets\Admin\images\browser\ie.png" />
+    <Content Include="Assets\Admin\images\browser\opera.png" />
+    <Content Include="Assets\Admin\images\browser\safari.png" />
+    <Content Include="Assets\Admin\images\favicon.ico" />
+    <Content Include="Assets\Admin\images\logo-blue.png" />
+    <Content Include="Assets\Admin\images\logo.png" />
+    <Content Include="Assets\Admin\images\mega-menu\01.jpg" />
+    <Content Include="Assets\Admin\images\mega-menu\02.jpg" />
+    <Content Include="Assets\Admin\images\mega-menu\03.jpg" />
+    <Content Include="Assets\Admin\images\select-arrow.png" />
+    <Content Include="Assets\Admin\images\user-bg.jpg" />
+    <Content Include="Assets\Admin\images\widget\AUSTRALIA.jpg" />
+    <Content Include="Assets\Admin\images\widget\BRAZIL.jpg" />
+    <Content Include="Assets\Admin\images\widget\DIGITALPEN.jpg" />
+    <Content Include="Assets\Admin\images\widget\GERMANY.jpg" />
+    <Content Include="Assets\Admin\images\widget\IPAD.jpg" />
+    <Content Include="Assets\Admin\images\widget\PHONE1.jpg" />
+    <Content Include="Assets\Admin\images\widget\PHONE2.jpg" />
+    <Content Include="Assets\Admin\images\widget\PHONE3.jpg" />
+    <Content Include="Assets\Admin\images\widget\PHONE4.jpg" />
+    <Content Include="Assets\Admin\images\widget\prod1.jpg" />
+    <Content Include="Assets\Admin\images\widget\prod2.jpg" />
+    <Content Include="Assets\Admin\images\widget\prod3.jpg" />
+    <Content Include="Assets\Admin\images\widget\prod4.jpg" />
+    <Content Include="Assets\Admin\images\widget\TABLET.jpg" />
+    <Content Include="Assets\Admin\images\widget\UK.jpg" />
+    <Content Include="Assets\Admin\images\widget\USA.jpg" />
+    <Content Include="Assets\Admin\images\widget\wather2bottom.png" />
+    <Content Include="Assets\Admin\images\widget\wather2m.png" />
+    <Content Include="Assets\Admin\images\widget\wather2star1.png" />
+    <Content Include="Assets\Admin\images\widget\wather2star2.png" />
+    <Content Include="Assets\Admin\images\widget\watherbottom.png" />
+    <Content Include="Assets\Admin\images\widget\wathernature.png" />
+    <Content Include="Assets\Admin\images\widget\watherstar1.png" />
+    <Content Include="Assets\Admin\images\widget\watherstar2.png" />
+    <Content Include="Assets\Admin\images\widget\wsm-3-star-1.png" />
+    <Content Include="Assets\Admin\images\widget\wsm-3-star-2.png" />
+    <Content Include="Assets\Admin\js\animation.js" />
+    <Content Include="Assets\Admin\js\bootstrap-growl.min.js" />
+    <Content Include="Assets\Admin\js\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\Admin\js\classie.js" />
+    <Content Include="Assets\Admin\js\color-json-common-page.js" />
+    <Content Include="Assets\Admin\js\common-pages.js" />
+    <Content Include="Assets\Admin\js\common-pages.min.js" />
+    <Content Include="Assets\Admin\js\controller\TagCouldController .js" />
+    <Content Include="Assets\Admin\js\controller\LoaiChuyenMucController.js" />
+    <Content Include="Assets\Admin\js\controller\LienKetController.js" />
+    <Content Include="Assets\Admin\js\controller\DonViController.js" />
+    <Content Include="Assets\Admin\js\controller\QuangCaoController.js" />
+    <Content Include="Assets\Admin\js\controller\LoaiDonViController.js" />
+    <Content Include="Assets\Admin\js\controller\ChuyenMucController.js" />
+    <Content Include="Assets\Admin\js\controller\userController.js" />
+    <Content Include="Assets\Admin\js\counter.js" />
+    <Content Include="Assets\Admin\js\float\curvedLines.js" />
+    <Content Include="Assets\Admin\js\float\jquery.flot.categories.js" />
+    <Content Include="Assets\Admin\js\float\jquery.flot.js" />
+    <Content Include="Assets\Admin\js\float\jquery.flot.pie.js" />
+    <Content Include="Assets\Admin\js\float\jquery.flot.tooltip.min.js" />
+    <Content Include="Assets\Admin\js\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Assets\Admin\js\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Assets\Admin\js\jquery.easypiechart.min.js" />
+    <Content Include="Assets\Admin\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Assets\Admin\js\jquery.mousewheel.min.js" />
+    <Content Include="Assets\Admin\js\jquery.quicksearch.js" />
+    <Content Include="Assets\Admin\js\jquery\jquery.min.js" />
+    <Content Include="Assets\Admin\js\modal.js" />
+    <Content Include="Assets\Admin\js\modalEffects.js" />
+    <Content Include="Assets\Admin\js\modernizr\css-scrollbars.js" />
+    <Content Include="Assets\Admin\js\modernizr\modernizr.js" />
+    <Content Include="Assets\Admin\js\morris.js\morris.js" />
+    <Content Include="Assets\Admin\js\owl-custom.js" />
+    <Content Include="Assets\Admin\js\pcoded.min.js" />
+    <Content Include="Assets\Admin\js\popper.js\popper.min.js" />
+    <Content Include="Assets\Admin\js\raphael\raphael.min.js" />
+    <Content Include="Assets\Admin\js\rating.js" />
+    <Content Include="Assets\Admin\js\script.js" />
+    <Content Include="Assets\Admin\js\script.min.js" />
+    <Content Include="Assets\Admin\js\SmoothScroll.js" />
+    <Content Include="Assets\Admin\js\swiper-custom.js" />
+    <Content Include="Assets\Admin\js\vertical\horizontal-layout.min.js" />
+    <Content Include="Assets\Admin\js\vertical\menu\box-layout.js" />
+    <Content Include="Assets\Admin\js\vertical\menu\menu-compact.js" />
+    <Content Include="Assets\Admin\js\vertical\menu\menu-header-fixed.js" />
+    <Content Include="Assets\Admin\js\vertical\menu\menu-hori-fixed.js" />
+    <Content Include="Assets\Admin\js\vertical\menu\menu-rtl.js" />
+    <Content Include="Assets\Admin\js\vertical\menu\menu-sidebar-fixed.js" />
+    <Content Include="Assets\Admin\js\vertical\menu\menu-static.js" />
+    <Content Include="Assets\Admin\js\vertical\vertical-layout.js" />
+    <Content Include="Assets\Admin\js\vertical\vertical-layout.min.js" />
+    <Content Include="Assets\Admin\pages\accordion\accordion.js" />
+    <Content Include="Assets\Admin\pages\accordion\accordion.min.js" />
+    <Content Include="Assets\Admin\pages\chart\morris\morris-custom-chart.js" />
+    <Content Include="Assets\Admin\pages\dashboard\amchart\css\amchart.css" />
+    <Content Include="Assets\Admin\pages\dashboard\amchart\css\export.css" />
+    <Content Include="Assets\Admin\pages\dashboard\amchart\js\amcharts.js" />
+    <Content Include="Assets\Admin\pages\dashboard\amchart\js\custom-amchart.js" />
+    <Content Include="Assets\Admin\pages\dashboard\amchart\js\export.min.js" />
+    <Content Include="Assets\Admin\pages\dashboard\amchart\js\images\dragIconRoundBig.svg" />
+    <Content Include="Assets\Admin\pages\dashboard\amchart\js\images\dragIconRoundBigH.svg" />
+    <Content Include="Assets\Admin\pages\dashboard\amchart\js\light.js" />
+    <Content Include="Assets\Admin\pages\dashboard\amchart\js\serial.js" />
+    <Content Include="Assets\Admin\pages\dashboard\custom-dashboard.js" />
+    <Content Include="Assets\Admin\pages\dashboard\custom-dashboard.min.js" />
+    <Content Include="Assets\Admin\pages\google-maps\gmaps.js" />
+    <Content Include="Assets\Admin\pages\google-maps\google-maps.js" />
+    <Content Include="Assets\Admin\pages\icon-modal.js" />
+    <Content Include="Assets\Admin\pages\notification\notification.css" />
+    <Content Include="Assets\Admin\pages\notification\notification.js" />
+    <Content Include="Assets\Admin\pages\todo\todo.js" />
+    <Content Include="Assets\Admin\pages\waves\css\waves.min.css" />
+    <Content Include="Assets\Admin\pages\waves\js\waves.min.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\amcharts.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\amcharts.min.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\ammap.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\ammap.min.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\continentsLow.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\continentsLow.min.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\export.min.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\gauge.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\gauge.min.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\images\dragIconRoundBig.svg" />
+    <Content Include="Assets\Admin\pages\widget\amchart\images\lens.svg" />
+    <Content Include="Assets\Admin\pages\widget\amchart\light.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\light.min.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\pie.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\pie.min.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\serial.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\serial.min.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\usaLow.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\worldLow.js" />
+    <Content Include="Assets\Admin\pages\widget\amchart\worldLow.min.js" />
+    <Content Include="Assets\Admin\pages\widget\excanvas.js" />
+    <Content Include="Assets\Client\css\educate.css" />
+    <Content Include="Assets\Client\css\hover_menu.css" />
+    <Content Include="Assets\Client\css\style.css" />
+    <Content Include="Assets\Client\img\1.jpg" />
+    <Content Include="Assets\Client\img\2.jpg" />
+    <Content Include="Assets\Client\img\3.jpg" />
+    <Content Include="Assets\Client\img\anh1.png" />
+    <Content Include="Assets\Client\img\anh2.png" />
+    <Content Include="Assets\Client\img\anh3.png" />
+    <Content Include="Assets\Client\img\anh4.png" />
+    <Content Include="Assets\Client\img\anh5.png" />
+    <Content Include="Assets\Client\img\anh6.png" />
+    <Content Include="Assets\Client\img\anh7.png" />
+    <Content Include="Assets\Client\img\anh8.png" />
+    <Content Include="Assets\Client\img\axon-300x200.png" />
+    <Content Include="Assets\Client\img\cauduong.jpg" />
+    <Content Include="Assets\Client\img\clb.png" />
+    <Content Include="Assets\Client\img\cntt.jpg" />
+    <Content Include="Assets\Client\img\cokhi.jpg" />
+    <Content Include="Assets\Client\img\dien-lanh.jpg" />
+    <Content Include="Assets\Client\img\dien.jpg" />
+    <Content Include="Assets\Client\img\dientu-vienthong.jpg" />
+    <Content Include="Assets\Client\img\doitac1.png" />
+    <Content Include="Assets\Client\img\doitac2.png" />
+    <Content Include="Assets\Client\img\doitac3.png" />
+    <Content Include="Assets\Client\img\doitac4.png" />
+    <Content Include="Assets\Client\img\flaticon.jpg" />
+    <Content Include="Assets\Client\img\footer_bgr.png" />
+    <Content Include="Assets\Client\img\giaothong.jpg" />
+    <Content Include="Assets\Client\img\hoatdong.png" />
+    <Content Include="Assets\Client\img\icon.png" />
+    <Content Include="Assets\Client\img\iconmu.png" />
+    <Content Include="Assets\Client\img\k-cntt.jpg" />
+    <Content Include="Assets\Client\img\k-dien.jpg" />
+    <Content Include="Assets\Client\img\khcn.jpg" />
+    <Content Include="Assets\Client\img\kientruc.jpg" />
+    <Content Include="Assets\Client\img\kientruc.png" />
+    <Content Include="Assets\Client\img\left.svg" />
+    <Content Include="Assets\Client\img\lienket.png" />
+    <Content Include="Assets\Client\img\lk1.png" />
+    <Content Include="Assets\Client\img\lk2.png" />
+    <Content Include="Assets\Client\img\lk3.png" />
+    <Content Include="Assets\Client\img\lk4.png" />
+    <Content Include="Assets\Client\img\lk5.png" />
+    <Content Include="Assets\Client\img\lk6.png" />
+    <Content Include="Assets\Client\img\lk7.png" />
+    <Content Include="Assets\Client\img\lk8.png" />
+    <Content Include="Assets\Client\img\logo.png" />
+    <Content Include="Assets\Client\img\logo1.png" />
+    <Content Include="Assets\Client\img\logo_debuil.png" />
+    <Content Include="Assets\Client\img\logo_debuil1.png" />
+    <Content Include="Assets\Client\img\moitruong.png" />
+    <Content Include="Assets\Client\img\new.jpg" />
+    <Content Include="Assets\Client\img\new1.png" />
+    <Content Include="Assets\Client\img\news.png" />
+    <Content Include="Assets\Client\img\news1.png" />
+    <Content Include="Assets\Client\img\news2.png" />
+    <Content Include="Assets\Client\img\news3.png" />
+    <Content Include="Assets\Client\img\nganh1.png" />
+    <Content Include="Assets\Client\img\nganh2.png" />
+    <Content Include="Assets\Client\img\nganh3.png" />
+    <Content Include="Assets\Client\img\nganh4.png" />
+    <Content Include="Assets\Client\img\nganh5.png" />
+    <Content Include="Assets\Client\img\right.svg" />
+    <Content Include="Assets\Client\img\sprite.png" />
+    <Content Include="Assets\Client\img\tdh.jpg" />
+    <Content Include="Assets\Client\img\thethao.jfif" />
+    <Content Include="Assets\Client\img\thethao.jpg" />
+    <Content Include="Assets\Client\img\thongbao.png" />
+    <Content Include="Assets\Client\img\tuyensinh1.png" />
+    <Content Include="Assets\Client\img\tuyensinh2.png" />
+    <Content Include="Assets\Client\img\tuyensinh3.png" />
+    <Content Include="Assets\Client\img\tuyensinh4.jpg" />
+    <Content Include="Assets\Client\video\UD-DUT %28online-video-cutter.com%29.mp4" />
+    <Content Include="Assets\Image\lk1.jpg" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Assets\Admin\icon\CAW.TTF" />
+    <Content Include="Assets\Admin\icon\fa-brands-400.eot" />
+    <Content Include="Assets\Admin\icon\fa-brands-400.ttf" />
+    <Content Include="Assets\Admin\icon\fa-brands-400.woff" />
+    <Content Include="Assets\Admin\icon\fa-brands-400.woff2" />
+    <Content Include="Assets\Admin\icon\fa-regular-400.eot" />
+    <Content Include="Assets\Admin\icon\fa-regular-400.ttf" />
+    <Content Include="Assets\Admin\icon\fa-regular-400.woff" />
+    <Content Include="Assets\Admin\icon\fa-regular-400.woff2" />
+    <Content Include="Assets\Admin\icon\fa-solid-900.eot" />
+    <Content Include="Assets\Admin\icon\fa-solid-900.ttf" />
+    <Content Include="Assets\Admin\icon\fa-solid-900.woff" />
+    <Content Include="Assets\Admin\icon\fa-solid-900.woff2" />
+    <Content Include="Assets\Admin\icon\feather\fonts\feather.eot" />
+    <Content Include="Assets\Admin\icon\feather\fonts\feather.ttf" />
+    <Content Include="Assets\Admin\icon\feather\fonts\feather.woff" />
+    <Content Include="Assets\Admin\icon\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\Admin\icon\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\Admin\icon\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\Admin\icon\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\Admin\icon\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Assets\Admin\icon\fontawesome-webfont.eot" />
+    <Content Include="Assets\Admin\icon\fontawesome-webfont.ttf" />
+    <Content Include="Assets\Admin\icon\fontawesome-webfont.woff" />
+    <Content Include="Assets\Admin\icon\fontawesome-webfont.woff2" />
+    <Content Include="Assets\Admin\icon\FontAwesome.otf" />
+    <Content Include="Assets\Admin\icon\icofont\fonts\icofont.eot" />
+    <Content Include="Assets\Admin\icon\icofont\fonts\icofont.ttf" />
+    <Content Include="Assets\Admin\icon\icofont\fonts\icofont.woff" />
+    <Content Include="Assets\Admin\icon\ionicons.eot" />
+    <Content Include="Assets\Admin\icon\ionicons.ttf" />
+    <Content Include="Assets\Admin\icon\ionicons.woff" />
+    <Content Include="Assets\Admin\icon\Linearicons-Free.eot" />
+    <Content Include="Assets\Admin\icon\Linearicons-Free.ttf" />
+    <Content Include="Assets\Admin\icon\Linearicons-Free.woff" />
+    <Content Include="Assets\Admin\icon\Linearicons-Free.woff2" />
+    <Content Include="Assets\Admin\icon\SEGOEUI.ttf" />
+    <Content Include="Assets\Admin\icon\SEGOEUIB.TTF" />
+    <Content Include="Assets\Admin\icon\segoeuii.ttf" />
+    <Content Include="Assets\Admin\icon\SEGOEUIZ.TTF" />
+    <Content Include="Assets\Admin\icon\Simple-Line-Icons.eot" />
+    <Content Include="Assets\Admin\icon\Simple-Line-Icons.ttf" />
+    <Content Include="Assets\Admin\icon\Simple-Line-Icons.woff" />
+    <Content Include="Assets\Admin\icon\Simple-Line-Icons.woff2" />
+    <Content Include="Assets\Admin\icon\themify-icons\fonts\themify.eot" />
+    <Content Include="Assets\Admin\icon\themify-icons\fonts\themify.ttf" />
+    <Content Include="Assets\Admin\icon\themify-icons\fonts\themify.woff" />
+    <Content Include="Assets\Admin\images\auth\Thumbs.db" />
+    <Content Include="Assets\Admin\images\Thumbs.db" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Header.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Navigation.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Assets\Admin\css\bootstrap.css.map" />
+    <Content Include="Areas\Admin\Views\LoaiChuyenMucs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiChuyenMucs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiChuyenMucs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiChuyenMucs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiChuyenMucs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DonVis\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DonVis\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\DonVis\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\DonVis\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DonVis\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiDonVis\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiDonVis\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiDonVis\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiDonVis\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LoaiDonVis\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ChuyenMucs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ChuyenMucs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ChuyenMucs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ChuyenMucs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ChuyenMucs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LienKets\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\LienKets\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\LienKets\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\LienKets\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\LienKets\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QuyenNguoiDungs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QuyenNguoiDungs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\QuyenNguoiDungs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\QuyenNguoiDungs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QuyenNguoiDungs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QuangCaos\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\QuangCaos\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\QuangCaos\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\QuangCaos\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QuangCaos\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TagCoulds\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\TagCoulds\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\TagCoulds\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\TagCoulds\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\TagCoulds\Index.cshtml" />
+    <Content Include="Assets\Client\img\clb1" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\TinTucSuKien.cshtml" />
+    <Content Include="Views\Home\HoatDongLienKet.cshtml" />
+    <Content Include="Views\Home\ThongTinTuyenSinh.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModelEF\ModelEF.csproj">
+      <Project>{ea7ca777-5f12-4097-8b6c-d7ef8cbc7c1d}</Project>
+      <Name>ModelEF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61340</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44301/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.4.0.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.4.0.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
